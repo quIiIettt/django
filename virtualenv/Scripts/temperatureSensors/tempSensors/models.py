@@ -2,7 +2,7 @@ from django.db import models
 import datetime
 
 
-class TemperatureSensors(models.Model):
+class temperatureSensors(models.Model):
     location = models.CharField('Location of the sensor',
         max_length = 255, blank = False)
     dateMeasurement = models.DateField('Date of temperature measurement',
