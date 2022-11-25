@@ -15,4 +15,4 @@ def sensor_page(request, location):
         sensor = [(str(k).capitalize().replace('_',''), v) for k, v in sensor.__dict__.items()]
     except ObjectDoesNotExist:
         return HttpResponse("wrong location")
-    return render(request, 'temperatureSensors.html', {'server': sensor[1:]})
+    return render(request, 'tempSensors.html', {'server': sensor[1:]})
