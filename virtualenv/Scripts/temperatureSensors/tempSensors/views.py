@@ -14,5 +14,5 @@ def sensor_page(request, id):
         sensor = temperatureSensors.objects.get(id = id)
         sensor = [(str(k).capitalize().replace('_',''), v) for k, v in sensor.__dict__.items()]
     except ObjectDoesNotExist:
-        return HttpResponse("wrong location")
+        return HttpResponse("wrong id")
     return render(request, 'tempSensors/tempSensors.html', {'server': sensor[1:]})
