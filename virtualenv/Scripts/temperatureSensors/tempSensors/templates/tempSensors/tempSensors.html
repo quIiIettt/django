@@ -1,10 +1,22 @@
 {% extends 'tempSensors/layout.html' %}
-
-{% block title %}HEAD{% endblock %}
-
+{% block title %}
+    Sensor location - {{ server.0.1 }}
+{% endblock %}
 {% block content %}
 
-    <h1>head</h1>
-    <p1>head</p1>
+<div class="container">
+    <h1 class="display-3 mb-4 mt-4">Sensor location - {{ server.0.1 }}</h1>
+    <div class="container text-decoration-none link-secondary" style="font-size: 20px">
+        <table class="table">
+        {% for param in server %}
+            <tr>
+                <td>{{ param.0 }}</td>
+                <td>{{ param.1 }}</td>
+            </tr>
+        {% endfor %}
+
+    </table>
+    </div>
+</div>
 
 {% endblock %}

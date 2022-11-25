@@ -1,21 +1,21 @@
 {% extends 'tempSensors/layout.html' %}
 
-{% block title %}Temperature Sensors{% endblock %}
+{% block title %}Temperature{% endblock %}
 
 {% block content %}
 <div class="container">
     <ol>
         <table class="table">
         <tr>
-            <th><h3 class="display-6">Temperature Sensors</h3></th>
+            <th><h3 class="display-3">Temperature Sensors</h3></th>
         </tr>
             {% for sensor in sensors %}
                 <tr>
-                    <td><a class="text-decoration-none link-secondary" style="font-size: 20px" href="/sensors/{{ sensor.id }}">{{ sensor.location }}</a></td>
+                    <td><a class="text-decoration-none link-secondary" style="font-size: 20px" href="/sensors/{{ sensor.id }}">{{ sensor.location }} - {{ sensor.temperature }}°</a></td>
                 </tr>
             {% endfor %}
         </table>
     </ol>
-    </div>
+</div>
 {% endblock %}
 

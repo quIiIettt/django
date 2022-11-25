@@ -15,4 +15,5 @@ def sensor_page(request, id):
         sensor = [(str(k).capitalize().replace('_',''), v) for k, v in sensor.__dict__.items()]
     except ObjectDoesNotExist:
         return HttpResponse("wrong id")
-    return render(request, 'tempSensors/tempSensors.html', {'server': sensor[1:]})
+    return render(request, 'tempSensors/tempSensors.html', {'server': sensor[2:]})
+

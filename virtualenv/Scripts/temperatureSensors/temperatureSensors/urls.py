@@ -21,4 +21,4 @@ from django.conf.urls.static import static
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('tempSensors.urls')),
-] + static(settings.STATIC_URL, document_root = settings.STATTIC_ROOT)
+] + static(settings.STATIC_URL, document_root = settings.STATIC_ROOT)
