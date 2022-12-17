@@ -1,8 +1,12 @@
 from django.shortcuts import render
+from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse
 from django.core.exceptions import ObjectDoesNotExist
+from django.views.generic import DetailView
+from rest_framework import viewsets
+from tempSensors.serializers import temperatureSensorsSerializer
+from tempSensors.models import temperatureSensors
 from .models import *
-
 
 
 def index(request):
@@ -17,3 +21,6 @@ def sensor_page(request, id):
         return HttpResponse()
     return render(request, 'tempSensors/tempSensors.html', {'server': sensor[2:]})
 
+class temperatureSensorsViewSet(viewsets.ModelViewSet):
+    queryset = temperatureSensors.objects.all()
+    serializer_class = temperatureSensorsSerializer

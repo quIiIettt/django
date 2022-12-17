@@ -23,5 +23,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('home/', TemplateView.as_view(template_name='dashboard/home.html'), name='home'),
     path('accounts/', include('allauth.urls')),
+    path('bugs/', include('tempSensors.urls')),
     path('', include('tempSensors.urls')),
 ] + static(settings.STATIC_URL, document_root = settings.STATIC_ROOT)
