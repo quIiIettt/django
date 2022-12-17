@@ -5,13 +5,14 @@
 {% block content %}
 <div class="container">
     <ol>
-        <table class="table">
+        <h3 class="display-3 "><center>Temperature Sensors</center></h3></th>
+        <table id="productSizes" class="table table-striped">
         <tr>
-            <th><h3 class="display-3">Temperature Sensors</h3></th>
+            
         </tr>
             {% for sensor in sensors %}
-                <tr>
-                    <td><a class="text-decoration-none link-secondary" style="font-size: 20px" href="/sensors/{{ sensor.id }}">{{ sensor.location }} - {{ sensor.temperature }}°</a></td>
+                <tr class="alert alert-dark">
+                    <td><center><a class="text-decoration-none link-dark" style="font-size: 20px" href="/sensors/{{ sensor.id }}">{{ sensor.location }} - {{ sensor.temperature }}°</center></a></td>
                 </tr>
             {% endfor %}
         </table>

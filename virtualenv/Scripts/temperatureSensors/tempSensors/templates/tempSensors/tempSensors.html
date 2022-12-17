@@ -5,11 +5,11 @@
 {% block content %}
 
 <div class="container">
-    <h1 class="display-3 mb-4 mt-4">Sensor location - {{ server.0.1 }}</h1>
+    <h1 class="display-3"><center>Sensor location - {{ server.0.1 }}</center></h1>
     <div class="container text-decoration-none link-secondary" style="font-size: 20px">
-        <table class="table">
+        <table class="table table-striped ">
         {% for param in server %}
-            <tr>
+            <tr class="alert alert-dark">
                 <td>{{ param.0 }}</td>
                 <td>{{ param.1 }}</td>
             </tr>
